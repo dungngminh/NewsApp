@@ -1,16 +1,28 @@
-import 'package:dio/dio.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
 import 'package:newsapp_mvvm/models/news_article.dart';
+import 'package:newsapp_mvvm/utils/constants.dart';
 
 class ApiService {
-  var dio = new Dio();
-
+  //default : us
   Future<List<NewsArticle>> fetchTopHeadlines() async {
-    var url =
-        "https://newsapi.org/v2/top-headlines?country=us&apiKey=7222c2a6c5294f9784f6974bdb3566ad";
+    var url = Uri.parse(Constants.TOP_HEADLINE_URL);
+    final response = await http.get(url);
 
-    final response = await dio.get(url);
     if (response.statusCode == 200) {
-      final result = response.data;
+      var result = convert.jsonDecode(response.body);
+      Iterable list = result['articles'];
+      return list.map((article) => NewsArticle.fromJson(article)).toList();
+    } else
+      throw Exception("failed to get top headlines data");
+  }
+
+  Future<List<NewsArticle>> fetchTopHeadlinesByCountry(String country) async {
+    var url = Uri.parse(Constants.headlinesFor(country));
+    final response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      var result = convert.jsonDecode(response.body);
       Iterable list = result['articles'];
       return list.map((article) => NewsArticle.fromJson(article)).toList();
     } else

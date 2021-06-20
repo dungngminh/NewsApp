@@ -8,8 +8,27 @@ enum LoadingStatus { completed, pending, empty }
 class NewsArticleListViewModel with ChangeNotifier {
   var loadingStatus = LoadingStatus.empty;
   var articles = <NewsArticleViewModel>[];
+
   void topHeadlines() async {
     List<NewsArticle> newsArticles = await ApiService().fetchTopHeadlines();
+    loadingStatus = LoadingStatus.pending;
+
+    notifyListeners();
+
+    this.articles = newsArticles
+        .map((article) => NewsArticleViewModel(article: article))
+        .toList();
+
+    if (this.articles.isEmpty) {
+      loadingStatus = LoadingStatus.empty;
+    } else {
+      loadingStatus = LoadingStatus.completed;
+    }
+    notifyListeners();
+  }
+
+  void topHeadlinesByCountry(String? country) async {
+    List<NewsArticle> newsArticles = await ApiService().fetchTopHeadlinesByCountry(country!);
     loadingStatus = LoadingStatus.pending;
 
     notifyListeners();
