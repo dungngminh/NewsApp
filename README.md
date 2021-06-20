@@ -1,6 +1,10 @@
-# newsapp_mvvm
+# NEWSAPP
 
-A new training MVVM Architecture
+A new training MVVM Architecture and using Provider from video of puzzleleaf
+
+![alt text](https://github.com/dungngminh/NewsApp-mvvm-training/blob/master/screenshots/Screenshot_2021.06.21_01.51.10.513.png)
+![alt text](https://github.com/dungngminh/NewsApp-mvvm-training/blob/master/screenshots/Screenshot_2021.06.21_01.51.24.537.png)
+![alt text](https://github.com/dungngminh/NewsApp-mvvm-training/blob/master/screenshots/Screenshot_2021.06.21_01.51.37.629.png)
 
 ## Getting Started
 
