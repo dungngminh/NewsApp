@@ -9,6 +9,6 @@ class Constants {
     "USA": "us",
     "India": "in",
     "Korea": "kr",
-    "China": "ch",
+    "China": "cn",
   };
 }
