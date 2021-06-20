@@ -1,11 +1,11 @@
-# newsapp_mvvm
+# NEWSAPP
 
-A new training MVVM Architecture
-https://github.com/dungngminh/NewsApp-mvvm-training/blob/master/screenshots/Screenshot_2021.06.21_01.51.10.513.png
-=====================================================
-https://github.com/dungngminh/NewsApp-mvvm-training/blob/master/screenshots/Screenshot_2021.06.21_01.51.24.537.png
-=====================================================
-https://github.com/dungngminh/NewsApp-mvvm-training/blob/master/screenshots/Screenshot_2021.06.21_01.51.37.629.png
+A new training MVVM Architecture and using Provider from video of puzzleleaf
+
+![alt text](https://github.com/dungngminh/NewsApp-mvvm-training/blob/master/screenshots/Screenshot_2021.06.21_01.51.10.513.png)
+![alt text](https://github.com/dungngminh/NewsApp-mvvm-training/blob/master/screenshots/Screenshot_2021.06.21_01.51.24.537.png)
+![alt text](https://github.com/dungngminh/NewsApp-mvvm-training/blob/master/screenshots/Screenshot_2021.06.21_01.51.37.629.png)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
